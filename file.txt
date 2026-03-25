@@ -1,0 +1,6 @@
+hey gpt write a md file for an web app using html and css - name of my app is - Weather-UI
+
+its like a custom webapp where the location is detected and the webapp shows bith dashboard and analyticak view of the data also give me the peompt to be entered in the Geminni
+
+
+also the ui of the website is attached as an image in for your reference
