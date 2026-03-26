@@ -28,16 +28,6 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-/* =========================
-   📁 Static Files
-========================= */
-app.use(express.static(path.join(__dirname, 'public'), {
-    setHeaders: (res, filePath) => {
-        if (filePath.endsWith('.js')) {
-            res.setHeader('Cache-Control', 'public, max-age=31536000');
-        }
-    }
-}));
 
 /* =========================
    🌐 API ROUTES
