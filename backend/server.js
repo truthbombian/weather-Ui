@@ -132,12 +132,6 @@ app.get('/health', (req, res) => {
     });
 });
 
-/* =========================
-   📄 SPA Fallback
-========================= */
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
 
 /* =========================
    ❌ Error Handling
