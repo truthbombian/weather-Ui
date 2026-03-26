@@ -153,40 +153,9 @@ app.use((err, req, res, next) => {
 /* =========================
    🚀 Start Server
 ========================= */
-let server;
-
-const startServer = () => {
-    server = app.listen(port, '0.0.0.0', () => {
+app.listen(port, '0.0.0.0', () => {
         console.log(`🚀 Server running at http://localhost:${port}`);
         console.log(`📱 App: http://localhost:${port}`);
         console.log(`🔍 Health: http://localhost:${port}/health`);
     });
-};
 
-startServer();
-
-/* =========================
-   🛑 Graceful Shutdown
-========================= */
-process.on('SIGTERM', () => {
-    console.log('SIGTERM received. Shutting down...');
-    if (server) {
-        server.close(() => {
-            console.log('Process terminated');
-        });
-    }
-});
-
-/* =========================
-   ⚠️ Global Error Catchers
-========================= */
-process.on('unhandledRejection', (err) => {
-    console.error('Unhandled Rejection:', err);
-});
-
-process.on('uncaughtException', (err) => {
-    console.error('Uncaught Exception:', err);
-    process.exit(1);
-});
-
-module.exports = app;
